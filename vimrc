@@ -1,5 +1,6 @@
 set nocompatible
 set relativenumber
+set noswapfile
 set t_Co=256
 filetype off
 
@@ -48,18 +49,21 @@ Plugin 'tpope/vim-commentary'
 Plugin 'Lokaltog/vim-easymotion'
 
 " Surround
+" Changin quotes or deleting them
 Plugin 'tpope/vim-surround'
 
 " Gundo
 Plugin 'sjl/gundo.vim'
 
 " PHP
+" syntax for PHP
 Plugin 'StanAngeloff/php.vim'
 
 " PHP QA Tools
 Bundle 'joonty/vim-phpqa.git'
 
 " Supertab
+" Supertab is a vim plugin which allows you to use <Tab> for all your insert
 Plugin 'ervandew/supertab'
 
 " PHP refactoring
@@ -80,7 +84,7 @@ filetype plugin indent on
 
 " NERDTree
 map <C-b> :NERDTreeToggle<CR>
-let NERDTreeShowHidden=0 " Press I to toggle hidden files
+let NERDTreeShowHidden=1 " Press I to toggle hidden files
 let NERDTreeQuitOnOpen=1
 let NERDTreeDirArrows=1
 let NERDTreeChDirMode=2
@@ -88,6 +92,7 @@ let NERDTreeHighlightCursorline=1
 autocmd StdinReadPre * let s:std_in=1 " Open NerdTree on launch if no file selected
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif " Close vim if only NerdTree open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif " Close vim if only NerdTree open
+
 
 " vim-airline
 set encoding=utf-8
@@ -133,6 +138,7 @@ vmap <Leader>ep <ESC>:lp<CR>
 "CtrlP
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_custom_ignore = 'node_modules\|git\|vendor'
 set wildignore+=*.swp,*.zip,*.so,*/tmp/*
 
 " Gundo
@@ -194,8 +200,8 @@ if has('autocmd')
 endif
 
 " Swap files out of the project root
-set backupdir=~/.vim/backup//
-"set directory=~/.vim/swap//
+" set backupdir=~/.vim/backup//
+" set directory=~/.vim/swap//
 
 " Syntax highlighting
 au BufNewFile,BufRead *.blade.php set filetype=blade " Set blade extension syntax
@@ -206,5 +212,5 @@ let php_folding=1
 let javaScript_fold=1
 let xml_syntax_folding=1
 set foldlevelstart=1
-autocmd BufWinLeave *.* mkview " Save folds when quitting
-autocmd BufWinEnter *.* silent loadview " Save folds when quitting
+"autocmd BufWinLeave * mkview " Save folds when quitting
+"autocmd BufWinEnter * silent loadview " Save folds when quitting
