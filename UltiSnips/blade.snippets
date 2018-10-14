@@ -1,0 +1,78 @@
+snippet newform "Create a new Laravel/Foundation form"
+<!--${1:Type of form} form-->
+{!! Form::open(['route' => '${2:route}',${3: 'files' => true,} 'method' => 'post', 'data-abide' => ''] ) !!}
+	${0:content}	
+{!! Form::close() !!}
+endsnippet
+
+snippet textfield "Create a new Laravel/Foundation text-field"
+<!--Form ${1:type}-field-->
+<div class="$1-field">
+	{!! Form::label('$1', '${1/\w+\s*/\u$0/}:') !!}
+	{!! Form::text('$1', ${2:value}, [${3:'required' => '', }'placeholder' => '${4:placeholder}'${5:, 'pattern' => '${6:alpha,alpha_numeric,inte    ger,number,card,cvv,email,url,domain,datetime,date,time,month_day_year,color,[REGEX]}'}]) !!}
+	<small class="error">${7:Error message}</small>
+</div>
+$0
+endsnippet
+
+snippet emailfield "Create a new Laravel/Foundation email-field"
+<!--Form email-field-->
+<div class="email-field">
+	{!! Form::label('email', 'Your email:') !!}
+	{!! Form::email('email', ${1:value}, [${3:'required' => ''}, 'placeholder' => '${2:placeholder}', 'pattern' => 'email']) !!}
+	<small class="error">You must enter a valid email address.</small>
+</div>
+$0
+endsnippet
+
+snippet submitbutton "Create a new Laravel/Foundation submit button"
+<!--Submit-button-->
+<div class="text-center">
+	{!! Form::submit('${1:Value}', ['class' => 'button radius${2: null,success,secondary,alert,info,disabled}']) !!}
+</div>
+endsnippet
+
+snippet filefield "Create a new Laravel/Foundation File picker"
+<!--Form ${1:type}-field-->
+<div class="$1-field">
+    <button class="fileInputClicker button radius">Select $1</button>
+	{!! Form::file('$1', ${2:['required' => '', }'class' => 'hide-input']) !!}
+	${3:<small class="error">${4:You must select a $1.}</small>}
+</div>
+$0
+endsnippet
+
+snippet textarea "Create a new Laravel/Foundation text area"
+<!--Form ${1:type}-field-->
+<div class="$1-field">
+	{!! Form::label('$1', '${1/\w+\s*/\u$0/}:') !!}
+	{!! Form::textarea('$1', ${2:value}, [${3:'required' => '', }'placeholder' => '${4:placeholder}'${5:, 'pattern' => '${6:alpha,alpha_numeric,integer,number,card,cvv,email,url,domain,datetime,date,time,month_day_year,color,[REGEX]}'}]) !!}
+	${7:<small class="error">${8:error}</small>}
+</div>
+$0
+endsnippet
+
+snippet password "Create a new Laravel/Foundation password field"
+<!-- Form password-field-->
+<div class="password-field">
+	{!! Form::label('password', 'Your password:') !!}
+	{!! Form::password('password', null, [${3:'required' => '', }'placeholder' => '${4:placeholder}', 'pattern' => 'alpha_numeric'}] !!}
+	<small class="error">${7:error}</small>
+</div>
+$0
+endsnippet
+
+snippet modal "Create a new Foundation modal"
+<!--${1:camelCase}-modal-->
+<div id="$1Modal" class="reveal-modal ${2:text-center}" data-reveal>
+	${3:content}
+</div>
+<a class="close-reveal-modal">&#215;</a>
+$0
+endsnippet
+
+snippet modalButton "Create a new Foundation button to call a modal"
+<!--${1:modalName} button-->
+<a role="button" href="#" class="button radius" data-reveal-id="$1">${2:value}</a>
+$0
+endsnippet
