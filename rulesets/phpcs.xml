@@ -1,6 +1,3 @@
-<?xml version="1.0"?>
-<ruleset name="Laravel">
-
     <description>
         A custom coding standard mostly based on PSR-1, adapted to Laravel. See http://laravel.com/docs/master/contributions.
     </description>

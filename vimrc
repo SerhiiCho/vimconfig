@@ -63,9 +63,6 @@ Plugin 'sjl/gundo.vim'
 " syntax for PHP
 Plugin 'StanAngeloff/php.vim'
 
-" PHP QA Tools
-Bundle 'joonty/vim-phpqa.git'
-
 " Supertab
 " Supertab is a vim plugin which allows you to use <Tab> for all your insert
 Plugin 'ervandew/supertab'
@@ -120,9 +117,8 @@ vnoremap <leader>db :call pdv#DocumentWithSnip()<CR>
 let g:pdv_template_dir = $HOME ."/.vim/DocBlocks/"
 
 " PHP QA
-let g:phpqa_messdetector_autorun = 1
-let g:phpqa_codesniffer_args = "--standard=~/.vim/rulesets/phpcs.xml"
-let g:phpqa_messdetector_ruleset = "~/.vim/rulesets/phpmd.xml"
+let g:syntastic_phpcs_disable = 1
+let g:syntastic_phpmd_disable = 1
 
 " Quick fix window
 au FileType qf call MoveAndResize()
@@ -203,18 +199,6 @@ if has('autocmd')
     autocmd GUIEnter * set visualbell t_vb=
 endif
 
-" Swap files out of the project root
-" set backupdir=~/.vim/backup//
-" set directory=~/.vim/swap//
-
 " Syntax highlighting
 au BufNewFile,BufRead *.blade.php set filetype=blade " Set blade extension syntax
 
-" Folding
-" set foldmethod=syntax
-" let php_folding=1
-" let javaScript_fold=1
-" let xml_syntax_folding=1
-" set foldlevelstart=1
-"autocmd BufWinLeave * mkview " Save folds when quitting
-"autocmd BufWinEnter * silent loadview " Save folds when quitting
