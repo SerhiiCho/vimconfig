@@ -7,6 +7,7 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+
 " This is the Vundle package, which can be found on GitHub.
 " For GitHub repos, you specify plugins using the
 " 'user/repository' format
@@ -14,6 +15,9 @@ Plugin 'gmarik/Vundle.vim'
 
 " Nerdtree
 Plugin 'scrooloose/nerdtree'
+
+" Auto pirs
+Plugin 'jiangmiao/auto-pairs'
 
 " vim-airline
 " Vim will draw a nice statusline at the bottom of each window
@@ -207,10 +211,10 @@ endif
 au BufNewFile,BufRead *.blade.php set filetype=blade " Set blade extension syntax
 
 " Folding
-set foldmethod=syntax
-let php_folding=1
-let javaScript_fold=1
-let xml_syntax_folding=1
-set foldlevelstart=1
+" set foldmethod=syntax
+" let php_folding=1
+" let javaScript_fold=1
+" let xml_syntax_folding=1
+" set foldlevelstart=1
 "autocmd BufWinLeave * mkview " Save folds when quitting
 "autocmd BufWinEnter * silent loadview " Save folds when quitting
