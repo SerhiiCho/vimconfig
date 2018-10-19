@@ -1,7 +1,9 @@
 set nocompatible
+set background=dark
 set relativenumber
 set noswapfile
 set t_Co=256
+syntax enable
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -18,6 +20,9 @@ Plugin 'scrooloose/nerdtree'
 
 " Auto pirs
 Plugin 'jiangmiao/auto-pairs'
+
+" Vim javascript
+Plugin 'pungloss/vim-javascript'
 
 " vim-airline
 " Vim will draw a nice statusline at the bottom of each window
@@ -74,10 +79,10 @@ Bundle 'vim-php/vim-php-refactoring'
 Plugin 'xsbeats/vim-blade'
 
 " PHP-complete
-Bundle 'Shougo/vimproc'
-Bundle 'Shougo/unite.vim'
-Bundle 'm2mdas/phpcomplete-extended'
-Bundle 'm2mdas/phpcomplete-extended-laravel'
+" Bundle 'Shougo/vimproc'
+" Bundle 'Shougo/unite.vim'
+" Bundle 'm2mdas/phpcomplete-extended'
+" Bundle 'm2mdas/phpcomplete-extended-laravel'
 
 " All plugins must be defined before here
 call vundle#end()
@@ -94,6 +99,8 @@ autocmd StdinReadPre * let s:std_in=1 " Open NerdTree on launch if no file selec
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif " Close vim if only NerdTree open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif " Close vim if only NerdTree open
 
+" vim-javascript
+let g:javascript_plugin_jsdoc = 1
 
 " vim-airline
 set encoding=utf-8
@@ -156,8 +163,8 @@ inoremap <expr> <PageDown> pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<PageDow
 inoremap <expr> <PageUp>   pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<PageUp>"
 
 "PHP complete_extended
-autocmd  FileType php setlocal omnifunc=phpcomplete_extended#CompletePHP
-let g:phpcomplete_index_composer_command="composer"
+" autocmd  FileType php setlocal omnifunc=phpcomplete_extended#CompletePHP
+" let g:phpcomplete_index_composer_command="composer"
 
 " Supertab
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
