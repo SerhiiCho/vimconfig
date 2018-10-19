@@ -1,6 +1,8 @@
 set nocompatible
 set background=dark
 set relativenumber
+set list
+set listchars=tab:›\ ,trail:⋅
 set noswapfile
 set t_Co=256
 syntax enable
@@ -89,7 +91,7 @@ call vundle#end()
 filetype plugin indent on
 
 " NERDTree
-map <C-b> :NERDTreeToggle<CR>
+map <C-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1 " Press I to toggle hidden files
 let NERDTreeQuitOnOpen=1
 let NERDTreeDirArrows=1
