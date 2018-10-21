@@ -1,20 +1,30 @@
+"           ██
+"          ░░
+"  ██    ██ ██ ██████████  ██████  █████
+" ░██   ░██░██░░██░░██░░██░░██░░█ ██░░░██
+" ░░██ ░██ ░██ ░██ ░██ ░██ ░██ ░ ░██  ░░
+"  ░░████  ░██ ░██ ░██ ░██ ░██   ░██   ██
+"   ░░██   ░██ ███ ░██ ░██░███   ░░█████
+"    ░░    ░░ ░░░  ░░  ░░ ░░░     ░░░░░
+"
 set nocompatible
 set background=dark
 set relativenumber
-set list
-set listchars=tab:›\ ,trail:⋅
 set noswapfile
 set t_Co=256
+set showmatch
 syntax enable
 filetype off
+
+set list
+set listchars=
+set listchars+=tab:››
+set listchars+=trail:·
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-
-" This is the Vundle package, which can be found on GitHub.
-" For GitHub repos, you specify plugins using the
-" 'user/repository' format
+" Plugins =========================
 Plugin 'gmarik/Vundle.vim'
 
 " Nerdtree
@@ -100,9 +110,6 @@ let NERDTreeHighlightCursorline=1
 autocmd StdinReadPre * let s:std_in=1 " Open NerdTree on launch if no file selected
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif " Close vim if only NerdTree open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif " Close vim if only NerdTree open
-
-" vim-javascript
-let g:javascript_plugin_jsdoc = 1
 
 " vim-airline
 set encoding=utf-8
