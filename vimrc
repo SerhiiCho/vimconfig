@@ -13,6 +13,9 @@ set relativenumber
 set noswapfile
 set t_Co=256
 set showmatch
+set path+=**
+set wildmenu
+
 syntax enable
 filetype off
 
@@ -113,7 +116,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 
 " vim-airline
 set encoding=utf-8
-set guifont=Meslo\ LG\ M\ for\ Powerline	"Install the font on host Putty 'powerline/fonts'
+set guifont=Meslo\ LG\ M\ for\ Powerline "Install the font on host Putty 'powerline/fonts'
 let g:airline#extensions#tabline#enabled=1
 let g:airline_powerline_fonts = 1
 set term=xterm-256color
