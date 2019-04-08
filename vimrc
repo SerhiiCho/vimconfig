@@ -40,6 +40,9 @@ Plugin 'jiangmiao/auto-pairs'
 " Vim javascript
 Plugin 'pangloss/vim-javascript'
 
+" Emmet
+Plugin 'mattn/emmet-vim'
+
 " Autosave
 Plugin 'vim-scripts/vim-auto-save'
 
