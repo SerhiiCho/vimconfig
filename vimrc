@@ -44,7 +44,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mattn/emmet-vim'
 
 " Autosave
-Plugin 'vim-scripts/vim-auto-save'
+" Plugin 'vim-scripts/vim-auto-save'
 
 " vim-airline
 " Vim will draw a nice statusline at the bottom of each window
@@ -205,9 +205,9 @@ nmap <C-a> :bprev<CR>   " Faster buffer changes
 nmap <C-x> :bd<CR>  " Close the current buffer"
 
 " Autosave
-let g:auto_save = 1 " enable AutoSave on Vim startup
-let g:auto_save_in_insert_mode = 0 " do not save while in insert mode
-let g:auto_save_silent = 1  " do not display the auto-save notification
+" let g:auto_save = 1 " enable AutoSave on Vim startup
+" let g:auto_save_in_insert_mode = 0 " do not save while in insert mode
+" let g:auto_save_silent = 1  " do not display the auto-save notification
 
 "Standard Settings"
 colorscheme spacegray
