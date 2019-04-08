@@ -15,6 +15,7 @@ set t_Co=256
 set showmatch
 set path+=**
 set wildmenu
+set nowrap
 
 syntax enable
 filetype off
@@ -229,7 +230,10 @@ nnoremap ,metpri :-1read $HOME/.vim/snippets/.metpri.php<CR>3jf(i
 nnoremap ,metpro :-1read $HOME/.vim/snippets/.metpro.php<CR>3jf(i
 nnoremap ,metcon :-1read $HOME/.vim/snippets/.metcon.php<CR>5j$a
 nnoremap ,var :-1read $HOME/.vim/snippets/.var.php<CR>jf)i
+nnoremap ,var1 :-1read $HOME/.vim/snippets/.var1.php<CR>jf)i
+nnoremap ,var2:-1read $HOME/.vim/snippets/.var2.php<CR>jf)i
 nnoremap ,try :-1read $HOME/.vim/snippets/.try.php<CR>j$a
+nnoremap ,try1 :-1read $HOME/.vim/snippets/.try1.php<CR>j$a
 nnoremap ,setup :-1read $HOME/.vim/snippets/.setup.php<CR>8j$a
 nnoremap ,tear :-1read $HOME/.vim/snippets/.tear.php<CR>8j$a
 nnoremap ,test :-1read $HOME/.vim/snippets/.test.php<CR>5j$a
@@ -238,6 +242,8 @@ nnoremap ,func :-1read $HOME/.vim/snippets/.func.php<CR>3jf(i
 nnoremap ,map :-1read $HOME/.vim/snippets/.map.php<CR>2jf)i
 nnoremap ,filter :-1read $HOME/.vim/snippets/.filter.php<CR>f,i
 nnoremap ,walk :-1read $HOME/.vim/snippets/.walk.php<CR>f,i
+nnoremap ,map1 :-1read $HOME/.vim/snippets/.map1.php<CR>2jf)i
+nnoremap ,filter1 :-1read $HOME/.vim/snippets/.filter1.php<CR>f,i
+nnoremap ,walk1 :-1read $HOME/.vim/snippets/.walk1.php<CR>f,i
 nnoremap ,extends :-1read $HOME/.vim/snippets/.extends.php<CR>2jf)hi
-
 
