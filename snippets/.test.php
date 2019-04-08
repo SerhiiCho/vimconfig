@@ -1,7 +1,7 @@
-/**
- * @test
- */
-public function example(): void
-{
-    
-}
+    /**
+     * @test
+     */
+    public function example(): void
+    {
+        
+    }

@@ -1,7 +1,7 @@
-/**
- * @return 
- */
-protected function ()
-{
-    #
-}
+    /**
+     * @return 
+     */
+    protected function ()
+    {
+        #
+    }

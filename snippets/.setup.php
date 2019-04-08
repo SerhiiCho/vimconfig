@@ -1,10 +1,10 @@
-/**
- * Setup the test environment
- *
- * @return void
- */
-public function setUp(): void
-{
-    parent::setUp();
-    
-}
+    /**
+     * Setup the test environment
+     *
+     * @return void
+     */
+    public function setUp(): void
+    {
+        parent::setUp();
+        
+    }
