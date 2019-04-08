@@ -40,6 +40,9 @@ Plugin 'jiangmiao/auto-pairs'
 " Vim javascript
 Plugin 'pungloss/vim-javascript'
 
+" Autosave
+Plugin 'vim-scripts/vim-auto-save'
+
 " vim-airline
 " Vim will draw a nice statusline at the bottom of each window
 Plugin 'bling/vim-airline'
@@ -176,8 +179,8 @@ inoremap <expr> <PageDown> pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<PageDow
 inoremap <expr> <PageUp>   pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<PageUp>"
 
 "PHP complete_extended
-" autocmd  FileType php setlocal omnifunc=phpcomplete_extended#CompletePHP
-" let g:phpcomplete_index_composer_command="composer"
+"autocmd  FileType php setlocal omnifunc=phpcomplete_extended#CompletePHP
+"let g:phpcomplete_index_composer_command="composer"
 
 " Supertab
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
@@ -193,6 +196,11 @@ nmap sp :split<CR>
 nmap <C-d> :bnext<CR>    " Faster buffer changes
 nmap <C-a> :bprev<CR>   " Faster buffer changes
 nmap <C-x> :bd<CR>  " Close the current buffer"
+
+" Autosave
+let g:auto_save = 1 " enable AutoSave on Vim startup
+let g:auto_save_in_insert_mode = 0 " do not save while in insert mode
+let g:auto_save_silent = 1  " do not display the auto-save notification
 
 "Standard Settings"
 colorscheme spacegray
