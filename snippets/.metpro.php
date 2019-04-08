@@ -1,0 +1,7 @@
+/**
+ * @return 
+ */
+protected function ()
+{
+    #
+}

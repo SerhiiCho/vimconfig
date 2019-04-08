@@ -104,7 +104,7 @@ call vundle#end()
 filetype plugin indent on
 
 " NERDTree
-map <C-n> :NERDTreeToggle<CR>
+map <C-\> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1 " Press I to toggle hidden files
 let NERDTreeQuitOnOpen=1
 let NERDTreeDirArrows=1
@@ -220,4 +220,18 @@ endif
 
 " Syntax highlighting
 au BufNewFile,BufRead *.blade.php set filetype=blade " Set blade extension syntax
+
+" Snippets
+nnoremap ,html :-1read $HOME/.vim/snippets/.html.html<CR>3jwf>a
+nnoremap ,class :-1read $HOME/.vim/snippets/.class.php<CR>2jwi
+nnoremap ,metpub :-1read $HOME/.vim/snippets/.metpub.php<CR>3jf(i
+nnoremap ,metpri :-1read $HOME/.vim/snippets/.metpri.php<CR>3jf(i
+nnoremap ,metpro :-1read $HOME/.vim/snippets/.metpro.php<CR>3jf(i
+nnoremap ,metcon :-1read $HOME/.vim/snippets/.metcon.php<CR>5j$a
+nnoremap ,var :-1read $HOME/.vim/snippets/.var.php<CR>jf)i
+nnoremap ,try :-1read $HOME/.vim/snippets/.try.php<CR>j$a
+nnoremap ,setup :-1read $HOME/.vim/snippets/.setup.php<CR>8j$a
+nnoremap ,tear :-1read $HOME/.vim/snippets/.tear.php<CR>8j$a
+nnoremap ,test :-1read $HOME/.vim/snippets/.test.php<CR>5j$a
+nnoremap ,dusktest :-1read $HOME/.vim/snippets/.dusktest.php<CR>7j$a
 
