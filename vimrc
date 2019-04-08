@@ -231,7 +231,7 @@ nnoremap ,metpro :-1read $HOME/.vim/snippets/.metpro.php<CR>3jf(i
 nnoremap ,metcon :-1read $HOME/.vim/snippets/.metcon.php<CR>5j$a
 nnoremap ,var :-1read $HOME/.vim/snippets/.var.php<CR>jf)i
 nnoremap ,var1 :-1read $HOME/.vim/snippets/.var1.php<CR>jf)i
-nnoremap ,var2:-1read $HOME/.vim/snippets/.var2.php<CR>jf)i
+nnoremap ,var2 :-1read $HOME/.vim/snippets/.var2.php<CR>jf)i
 nnoremap ,try :-1read $HOME/.vim/snippets/.try.php<CR>j$a
 nnoremap ,try1 :-1read $HOME/.vim/snippets/.try1.php<CR>j$a
 nnoremap ,setup :-1read $HOME/.vim/snippets/.setup.php<CR>8j$a
