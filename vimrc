@@ -38,14 +38,15 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'jiangmiao/auto-pairs'
 
 " Vim javascript
-Plugin 'pungloss/vim-javascript'
+Plugin 'pangloss/vim-javascript'
 
 " Autosave
 Plugin 'vim-scripts/vim-auto-save'
 
 " vim-airline
 " Vim will draw a nice statusline at the bottom of each window
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+
 
 "colour-scheme
 Plugin 'ajh17/Spacegray.vim'
@@ -66,6 +67,9 @@ Plugin 'SirVer/ultisnips'
 
 " PDV
 Bundle 'tobyS/PDV'
+
+" Namespace resolver
+Bundle 'arnaud-lb/vim-php-namespace'
 
 " Ctrlp
 Plugin 'kien/ctrlp.vim'
@@ -226,6 +230,18 @@ set noerrorbells visualbell t_vb=
 if has('autocmd')
     autocmd GUIEnter * set visualbell t_vb=
 endif
+
+" Namespace resolver
+let g:php_namespace_sort_after_insert = 1 " dependencies sorted every time you insert one
+
+" Automatically adds the corresponding use statement for the name under the cursor
+function! IPhpInsertUse()
+    call PhpInsertUse()
+    call feedkeys('a',  'n')
+endfunction
+autocmd FileType php inoremap <Leader>u <Esc>:call IPhpInsertUse()<CR>
+autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
+
 
 " Syntax highlighting
 au BufNewFile,BufRead *.blade.php set filetype=blade " Set blade extension syntax
