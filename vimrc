@@ -249,7 +249,10 @@ autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
 " Syntax highlighting
 au BufNewFile,BufRead *.blade.php set filetype=blade " Set blade extension syntax
 
-" Snippets
+" Mapping
+map ,, :!clear && php -l %<CR>
+
+"Snippets
 nnoremap ,html :-1read $HOME/.vim/snippets/.html.html<CR>3jwf>a
 nnoremap ,class :-1read $HOME/.vim/snippets/.class.php<CR>2jwi
 nnoremap ,metpub :-1read $HOME/.vim/snippets/.metpub.php<CR>3jf(i
