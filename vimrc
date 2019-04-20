@@ -16,6 +16,7 @@ set showmatch
 set path+=**
 set wildmenu
 set nowrap
+set ignorecase
 
 syntax enable
 filetype off
@@ -33,6 +34,9 @@ Plugin 'gmarik/Vundle.vim'
 
 " Nerdtree
 Plugin 'scrooloose/nerdtree'
+
+" PHP superplugin
+Plugin 'shawncplus/phpcomplete.vim'
 
 " Auto pirs
 Plugin 'jiangmiao/auto-pairs'
@@ -103,6 +107,8 @@ Bundle 'vim-php/vim-php-refactoring'
 
 " Blade syntax
 Plugin 'xsbeats/vim-blade'
+
+Plugin 'mhinz/vim-signify'
 
 " PHP-complete
 " Bundle 'Shougo/vimproc'
@@ -250,7 +256,8 @@ autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
 au BufNewFile,BufRead *.blade.php set filetype=blade " Set blade extension syntax
 
 " Mapping
-map ,, :!clear && php -l %<CR>
+map ,, :!clear && php %<CR>
+map ,py :!clear && python %<CR>
 
 "Snippets
 nnoremap ,html :-1read $HOME/.vim/snippets/.html.html<CR>3jwf>a
@@ -276,4 +283,3 @@ nnoremap ,map1 :-1read $HOME/.vim/snippets/.map1.php<CR>2jf)i
 nnoremap ,filter1 :-1read $HOME/.vim/snippets/.filter1.php<CR>f,i
 nnoremap ,walk1 :-1read $HOME/.vim/snippets/.walk1.php<CR>f,i
 nnoremap ,extends :-1read $HOME/.vim/snippets/.extends.php<CR>2jf)hi
-
