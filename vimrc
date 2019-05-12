@@ -48,7 +48,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mattn/emmet-vim'
 
 " Autosave
-" Plugin 'vim-scripts/vim-auto-save'
+Plugin 'vim-scripts/vim-auto-save'
 
 " vim-airline
 " Vim will draw a nice statusline at the bottom of each window
@@ -211,8 +211,8 @@ nmap <C-a> :bprev<CR>   " Faster buffer changes
 nmap <C-x> :bd<CR>  " Close the current buffer"
 
 " Autosave
-" let g:auto_save = 1 " enable AutoSave on Vim startup
-" let g:auto_save_in_insert_mode = 0 " do not save while in insert mode
+let g:auto_save = 1 " enable AutoSave on Vim startup
+let g:auto_save_in_insert_mode = 0 " do not save while in insert mode
 " let g:auto_save_silent = 1  " do not display the auto-save notification
 
 "Standard Settings"
@@ -283,3 +283,4 @@ nnoremap ,map1 :-1read $HOME/.vim/snippets/.map1.php<CR>2jf)i
 nnoremap ,filter1 :-1read $HOME/.vim/snippets/.filter1.php<CR>f,i
 nnoremap ,walk1 :-1read $HOME/.vim/snippets/.walk1.php<CR>f,i
 nnoremap ,extends :-1read $HOME/.vim/snippets/.extends.php<CR>2jf)hi
+nnoremap ,iife :-1read $HOME/.vim/snippets/.iife.js<CR>j$
