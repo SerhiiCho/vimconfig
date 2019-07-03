@@ -1,6 +1,3 @@
-    /**
-     * @return 
-     */
     protected function ()
     {
         #

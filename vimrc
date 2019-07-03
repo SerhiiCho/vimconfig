@@ -15,8 +15,11 @@ set t_Co=256
 set showmatch
 set path+=**
 set wildmenu
-set nowrap
+set wrap
+set hlsearch
 set ignorecase
+set incsearch
+set smartcase
 
 syntax enable
 filetype off
@@ -259,13 +262,15 @@ au BufNewFile,BufRead *.blade.php set filetype=blade " Set blade extension synta
 map ,, :!clear && php %<CR>
 map ,py :!clear && python %<CR>
 
+nnoremap <CR> :nohlsearch<cr>
+
 "Snippets
 nnoremap ,html :-1read $HOME/.vim/snippets/.html.html<CR>3jwf>a
 nnoremap ,class :-1read $HOME/.vim/snippets/.class.php<CR>2jwi
-nnoremap ,metpub :-1read $HOME/.vim/snippets/.metpub.php<CR>3jf(i
-nnoremap ,metpri :-1read $HOME/.vim/snippets/.metpri.php<CR>3jf(i
-nnoremap ,metpro :-1read $HOME/.vim/snippets/.metpro.php<CR>3jf(i
-nnoremap ,metcon :-1read $HOME/.vim/snippets/.metcon.php<CR>5j$a
+nnoremap ,pubf :-1read $HOME/.vim/snippets/.pubf.php<CR>f(i
+nnoremap ,prif :-1read $HOME/.vim/snippets/.prif.php<CR>f(i
+nnoremap ,prof :-1read $HOME/.vim/snippets/.prof.php<CR>f(i
+nnoremap ,conf :-1read $HOME/.vim/snippets/.conf.php<CR>2j$a
 nnoremap ,var :-1read $HOME/.vim/snippets/.var.php<CR>jf)i
 nnoremap ,var1 :-1read $HOME/.vim/snippets/.var1.php<CR>jf)i
 nnoremap ,var2 :-1read $HOME/.vim/snippets/.var2.php<CR>jf)i
@@ -280,6 +285,7 @@ nnoremap ,map :-1read $HOME/.vim/snippets/.map.php<CR>2jf)i
 nnoremap ,filter :-1read $HOME/.vim/snippets/.filter.php<CR>f,i
 nnoremap ,walk :-1read $HOME/.vim/snippets/.walk.php<CR>f,i
 nnoremap ,map1 :-1read $HOME/.vim/snippets/.map1.php<CR>2jf)i
+nnoremap ,map2 :-1read $HOME/.vim/snippets/.map2.php<CR>2jf)i
 nnoremap ,filter1 :-1read $HOME/.vim/snippets/.filter1.php<CR>f,i
 nnoremap ,walk1 :-1read $HOME/.vim/snippets/.walk1.php<CR>f,i
 nnoremap ,extends :-1read $HOME/.vim/snippets/.extends.php<CR>2jf)hi
