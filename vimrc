@@ -259,8 +259,9 @@ autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
 au BufNewFile,BufRead *.blade.php set filetype=blade " Set blade extension syntax
 
 " Mapping
-map ,, :!clear && php %<CR>
+map ,, :!clear && php7.4 %<CR>
 map ,py :!clear && python %<CR>
+map ,node :!clear && node %<CR>
 
 nnoremap <CR> :nohlsearch<cr>
 
