@@ -57,7 +57,6 @@ Plugin 'vim-scripts/vim-auto-save'
 " Vim will draw a nice statusline at the bottom of each window
 Plugin 'vim-airline/vim-airline'
 
-
 "colour-scheme
 Plugin 'ajh17/Spacegray.vim'
 
@@ -254,13 +253,12 @@ endfunction
 autocmd FileType php inoremap <Leader>u <Esc>:call IPhpInsertUse()<CR>
 autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
 
-
 " Syntax highlighting
 au BufNewFile,BufRead *.blade.php set filetype=blade " Set blade extension syntax
 
 " Mapping
 map ,, :!clear && php7.4 %<CR>
-map ,py :!clear && python %<CR>
+map ,py :!clear && python3 %<CR>
 map ,node :!clear && node %<CR>
 
 nnoremap <CR> :nohlsearch<cr>
@@ -277,17 +275,26 @@ nnoremap ,var1 :-1read $HOME/.vim/snippets/.var1.php<CR>jf)i
 nnoremap ,var2 :-1read $HOME/.vim/snippets/.var2.php<CR>jf)i
 nnoremap ,try :-1read $HOME/.vim/snippets/.try.php<CR>j$a
 nnoremap ,try1 :-1read $HOME/.vim/snippets/.try1.php<CR>j$a
+nnoremap ,try2 :-1read $HOME/.vim/snippets/.try2.php<CR>j$a
 nnoremap ,setup :-1read $HOME/.vim/snippets/.setup.php<CR>8j$a
 nnoremap ,tear :-1read $HOME/.vim/snippets/.tear.php<CR>8j$a
 nnoremap ,test :-1read $HOME/.vim/snippets/.test.php<CR>5j$a
 nnoremap ,dusktest :-1read $HOME/.vim/snippets/.dusktest.php<CR>7j$a
 nnoremap ,func :-1read $HOME/.vim/snippets/.func.php<CR>3jf(i
 nnoremap ,map :-1read $HOME/.vim/snippets/.map.php<CR>2jf)i
-nnoremap ,filter :-1read $HOME/.vim/snippets/.filter.php<CR>f,i
-nnoremap ,walk :-1read $HOME/.vim/snippets/.walk.php<CR>f,i
 nnoremap ,map1 :-1read $HOME/.vim/snippets/.map1.php<CR>2jf)i
 nnoremap ,map2 :-1read $HOME/.vim/snippets/.map2.php<CR>2jf)i
+nnoremap ,filter :-1read $HOME/.vim/snippets/.filter.php<CR>f,i
 nnoremap ,filter1 :-1read $HOME/.vim/snippets/.filter1.php<CR>f,i
+nnoremap ,filter2 :-1read $HOME/.vim/snippets/.filter2.php<CR>f,i
+nnoremap ,walk :-1read $HOME/.vim/snippets/.walk.php<CR>f,i
 nnoremap ,walk1 :-1read $HOME/.vim/snippets/.walk1.php<CR>f,i
+nnoremap ,walk2 :-1read $HOME/.vim/snippets/.walk2.php<CR>f,i
+nnoremap ,for :-1read $HOME/.vim/snippets/.for.php<CR>f;f;
+nnoremap ,for1 :-1read $HOME/.vim/snippets/.for1.php<CR>f;f;
+nnoremap ,for2 :-1read $HOME/.vim/snippets/.for2.php<CR>f;f;
+nnoremap ,foreach :-1read $HOME/.vim/snippets/.foreach.php<CR>fata
+nnoremap ,foreach1 :-1read $HOME/.vim/snippets/.foreach1.php<CR>fata
+nnoremap ,foreach2 :-1read $HOME/.vim/snippets/.foreach2.php<CR>fata
 nnoremap ,extends :-1read $HOME/.vim/snippets/.extends.php<CR>2jf)hi
 nnoremap ,iife :-1read $HOME/.vim/snippets/.iife.js<CR>j$
