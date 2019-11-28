@@ -26,8 +26,8 @@ filetype off
 
 set list
 set listchars=
-set listchars+=tab:››
-set listchars+=trail:·
+set listchars+=tab:··
+set listchars+=space:·
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -257,10 +257,13 @@ autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
 au BufNewFile,BufRead *.blade.php set filetype=blade " Set blade extension syntax
 
 " Mapping
-map ,, :!clear && php7.4 %<CR>
-map ,py :!clear && python3 %<CR>
+map ,, :!clear && php %<CR>
+map ,py :!clear && python3.6 %<CR>
 map ,node :!clear && node %<CR>
+map ,go :!clear && go run %<CR>
 
+
+" Other
 nnoremap <CR> :nohlsearch<cr>
 
 "Snippets
@@ -298,3 +301,4 @@ nnoremap ,foreach1 :-1read $HOME/.vim/snippets/.foreach1.php<CR>fata
 nnoremap ,foreach2 :-1read $HOME/.vim/snippets/.foreach2.php<CR>fata
 nnoremap ,extends :-1read $HOME/.vim/snippets/.extends.php<CR>2jf)hi
 nnoremap ,iife :-1read $HOME/.vim/snippets/.iife.js<CR>j$
+nnoremap ,php :-1read $HOME/.vim/snippets/.php.php<CR>jj
