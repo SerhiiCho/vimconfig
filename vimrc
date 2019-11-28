@@ -24,10 +24,15 @@ set smartcase
 syntax enable
 filetype off
 
+" Enable scrolling with a mouse wheel
+set mouse=a
+map <ScrollWheelUp> <C-Y>
+map <ScrollWheelDown> <C-E>
+
 set list
 set listchars=
 set listchars+=tab:··
-set listchars+=space:·
+set listchars+=trail:·
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
