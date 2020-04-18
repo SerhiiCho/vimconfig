@@ -40,6 +40,9 @@ call vundle#begin()
 " Plugins =========================
 Plugin 'gmarik/Vundle.vim'
 
+" Vue syntax
+Plugin 'posva/vim-vue'
+
 " Nerdtree
 Plugin 'scrooloose/nerdtree'
 
@@ -262,11 +265,11 @@ autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
 au BufNewFile,BufRead *.blade.php set filetype=blade " Set blade extension syntax
 
 " Mapping
-map ,, :!clear && php %<CR>
+map ,, :!clear && php7.4 %<CR>
 map ,py :!clear && python3.6 %<CR>
 map ,node :!clear && node %<CR>
 map ,go :!clear && go run %<CR>
-
+map ,node :!clear && node %<CR>
 
 " Other
 nnoremap <CR> :nohlsearch<cr>
@@ -307,3 +310,4 @@ nnoremap ,foreach2 :-1read $HOME/.vim/snippets/.foreach2.php<CR>fata
 nnoremap ,extends :-1read $HOME/.vim/snippets/.extends.php<CR>2jf)hi
 nnoremap ,iife :-1read $HOME/.vim/snippets/.iife.js<CR>j$
 nnoremap ,php :-1read $HOME/.vim/snippets/.php.php<CR>jj
+nnoremap ,temp :-1read $HOME/.vim/snippets/.temp.vue<CR>j$
