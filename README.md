@@ -3,3 +3,9 @@
 ## About
 
 This repo is just my prefered vim configurations. Nothing can say about it.
+
+## Use config
+
+- Files should be in ~/.vim directory
+- [Vundle](https://github.com/VundleVim/Vundle.vim) needs to be installed
+- Open ~/.vim/vimrc and run :PluginInstall
