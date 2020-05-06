@@ -43,6 +43,9 @@ Plugin 'gmarik/Vundle.vim'
 " Vue syntax
 Plugin 'posva/vim-vue'
 
+" Color schemes
+Plugin 'rafi/awesome-vim-colorschemes'
+
 " Nerdtree
 Plugin 'scrooloose/nerdtree'
 
@@ -226,7 +229,8 @@ let g:auto_save_in_insert_mode = 0 " do not save while in insert mode
 " let g:auto_save_silent = 1  " do not display the auto-save notification
 
 "Standard Settings"
-colorscheme spacegray
+" colorscheme spacegray
+colorscheme github
 set tabstop=4
 set shiftwidth=4
 set smarttab
