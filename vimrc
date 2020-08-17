@@ -49,9 +49,6 @@ Plugin 'rafi/awesome-vim-colorschemes'
 " Nerdtree
 Plugin 'scrooloose/nerdtree'
 
-" Copy to clipboard
-Plugin 'christoomey/vim-system-copy'
-
 " PHP superplugin
 Plugin 'shawncplus/phpcomplete.vim'
 
