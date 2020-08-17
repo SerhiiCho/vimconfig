@@ -15,7 +15,7 @@ set t_Co=256
 set showmatch
 set path+=**
 set wildmenu
-set wrap
+set nowrap
 set hlsearch
 set ignorecase
 set incsearch
@@ -232,8 +232,8 @@ let g:auto_save_in_insert_mode = 0 " do not save while in insert mode
 " let g:auto_save_silent = 1  " do not display the auto-save notification
 
 "Standard Settings"
-"colorscheme spacegray
-colorscheme github
+colorscheme spacegray
+"colorscheme github
 set tabstop=4
 set shiftwidth=4
 set smarttab
@@ -316,5 +316,5 @@ nnoremap ,foreach1 :-1read $HOME/.vim/snippets/.foreach1.php<CR>fata
 nnoremap ,foreach2 :-1read $HOME/.vim/snippets/.foreach2.php<CR>fata
 nnoremap ,extends :-1read $HOME/.vim/snippets/.extends.php<CR>2jf)hi
 nnoremap ,iife :-1read $HOME/.vim/snippets/.iife.js<CR>j$
-nnoremap ,php :-1read $HOME/.vim/snippets/.php.php<CR>jj
+nnoremap ,php :-1read $HOME/.vim/snippets/.php.php<CR>4ji
 nnoremap ,temp :-1read $HOME/.vim/snippets/.temp.vue<CR>j$
