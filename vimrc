@@ -40,6 +40,9 @@ call vundle#begin()
 " Plugins =========================
 Plugin 'gmarik/Vundle.vim'
 
+" Wakatime
+Plugin 'wakatime/vim-wakatime'
+
 " Vue syntax
 Plugin 'posva/vim-vue'
 
@@ -48,6 +51,9 @@ Plugin 'rafi/awesome-vim-colorschemes'
 
 " Nerdtree
 Plugin 'scrooloose/nerdtree'
+
+" Copy / paster
+Plugin 'christoomey/vim-system-copy'
 
 " PHP superplugin
 Plugin 'shawncplus/phpcomplete.vim'
@@ -274,6 +280,7 @@ map ,py :!clear && python3.6 %<CR>
 map ,node :!clear && node %<CR>
 map ,go :!clear && go run %<CR>
 map ,node :!clear && node %<CR>
+map ,bash :!clear && ./%<CR>
 
 " Other
 nnoremap <CR> :nohlsearch<cr>
