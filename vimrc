@@ -40,11 +40,11 @@ call vundle#begin()
 " Plugins =========================
 Plugin 'gmarik/Vundle.vim'
 
-" Wakatime
-Plugin 'wakatime/vim-wakatime'
-
 " Vue syntax
 Plugin 'posva/vim-vue'
+
+" Material theme
+Plugin 'kaicataldo/material.vim'
 
 " Color schemes
 Plugin 'rafi/awesome-vim-colorschemes'
@@ -75,7 +75,7 @@ Plugin 'vim-scripts/vim-auto-save'
 Plugin 'vim-airline/vim-airline'
 
 "colour-scheme
-Plugin 'ajh17/Spacegray.vim'
+Plugin 'ackyshake/Spacegray.vim'
 
 " Markdown
 Plugin 'godlygeek/tabular'
@@ -190,6 +190,9 @@ nmap <Leader>ep :lp<CR>
 imap <Leader>ep <ESC>:lp<CR>i
 vmap <Leader>ep <ESC>:lp<CR>
 
+" Material theme
+let g:material_theme_style = 'darker'
+
 "CtrlP
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_working_path_mode = 'ra'
@@ -236,7 +239,8 @@ let g:auto_save_in_insert_mode = 0 " do not save while in insert mode
 
 "Standard Settings"
 colorscheme spacegray
-"colorscheme github
+" colorscheme github
+" colorscheme material
 set tabstop=4
 set shiftwidth=4
 set smarttab
@@ -302,7 +306,7 @@ nnoremap ,setup :-1read $HOME/.vim/snippets/.setup.php<CR>8j$a
 nnoremap ,tear :-1read $HOME/.vim/snippets/.tear.php<CR>8j$a
 nnoremap ,test :-1read $HOME/.vim/snippets/.test.php<CR>5j$a
 nnoremap ,dusktest :-1read $HOME/.vim/snippets/.dusktest.php<CR>7j$a
-nnoremap ,func :-1read $HOME/.vim/snippets/.func.php<CR>3jf(i
+nnoremap ,fun :-1read $HOME/.vim/snippets/.fun.php<CR>f(i
 nnoremap ,map :-1read $HOME/.vim/snippets/.map.php<CR>2jf)i
 nnoremap ,map1 :-1read $HOME/.vim/snippets/.map1.php<CR>2jf)i
 nnoremap ,map2 :-1read $HOME/.vim/snippets/.map2.php<CR>2jf)i
