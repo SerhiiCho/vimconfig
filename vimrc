@@ -237,10 +237,9 @@ let g:auto_save = 1 " enable AutoSave on Vim startup
 let g:auto_save_in_insert_mode = 0 " do not save while in insert mode
 " let g:auto_save_silent = 1  " do not display the auto-save notification
 
-"Standard Settings"
-" colorscheme spacegray
-colorscheme github
-" colorscheme material
+" Standard Settings"
+" colorscheme spacegrayicolorscheme github
+colorscheme material
 set tabstop=4
 set shiftwidth=4
 set smarttab
@@ -280,10 +279,10 @@ au BufNewFile,BufRead *.blade.php set filetype=blade " Set blade extension synta
 
 " Mapping
 map ,, :!clear && php %<CR>
-map ,py :!clear && python3.6 %<CR>
+map ,py :!clear && python3 %<CR>
 map ,node :!clear && node %<CR>
+map ,js :!clear && node %<CR>
 map ,go :!clear && go run %<CR>
-map ,node :!clear && node %<CR>
 map ,bash :!clear && ./%<CR>
 
 " Other
