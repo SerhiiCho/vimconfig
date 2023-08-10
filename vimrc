@@ -1,12 +1,3 @@
-"           ██
-"          ░░
-"  ██    ██ ██ ██████████  ██████  █████
-" ░██   ░██░██░░██░░██░░██░░██░░█ ██░░░██
-" ░░██ ░██ ░██ ░██ ░██ ░██ ░██ ░ ░██  ░░
-"  ░░████  ░██ ░██ ░██ ░██ ░██   ░██   ██
-"   ░░██   ░██ ███ ░██ ░██░███   ░░█████
-"    ░░    ░░ ░░░  ░░  ░░ ░░░     ░░░░░
-"
 set nocompatible
 set background=dark
 set relativenumber
@@ -61,7 +52,6 @@ Plugin 'pangloss/vim-javascript'
 " Autosave
 Plugin 'vim-scripts/vim-auto-save'
 
-" vim-airline
 " Vim will draw a nice statusline at the bottom of each window
 Plugin 'vim-airline/vim-airline'
 
@@ -82,19 +72,8 @@ Plugin 'tpope/vim-commentary'
 " PHP. Syntax for PHP
 Plugin 'StanAngeloff/php.vim'
 
-" PHP refactoring
-Bundle 'vim-php/vim-php-refactoring'
-
 " Blade syntax
 Plugin 'xsbeats/vim-blade'
-
-Plugin 'mhinz/vim-signify'
-
-" PHP-complete
-" Bundle 'Shougo/vimproc'
-" Bundle 'Shougo/unite.vim'
-" Bundle 'm2mdas/phpcomplete-extended'
-" Bundle 'm2mdas/phpcomplete-extended-laravel'
 
 " All plugins must be defined before here
 call vundle#end()
@@ -146,9 +125,6 @@ let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_custom_ignore = 'node_modules\|git\|vendor'
 set wildignore+=*.swp,*.zip,*.so,*/tmp/*
 
-" PHP refactoring
-let g:php_refactor_command='php ~/.vim/refactor/refactor.phar'
-
 " keymaps
 nmap <C-s> :w<CR>	" Make sure to add 'stty ixany' and 'stty ixoff -ixon' to .bashrc to disable freezing
 imap <C-s> <ESC>:w<CR>i
@@ -164,7 +140,6 @@ let g:auto_save_in_insert_mode = 0 " do not save while in insert mode
 " let g:auto_save_silent = 1  " do not display the auto-save notification
 
 " Standard Settings"
-" colorscheme material github
 colorscheme material
 set tabstop=4
 set shiftwidth=4
