@@ -1,7 +1,4 @@
-    /**
-     * @test
-     */
-    public function example(): void
+    public function test(): void
     {
-        
+        $this->markTestIncomplete();
     }

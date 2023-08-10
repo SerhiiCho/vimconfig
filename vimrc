@@ -38,16 +38,13 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " Plugins =========================
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
 " Vue syntax
 Plugin 'posva/vim-vue'
 
 " Material theme
 Plugin 'kaicataldo/material.vim'
-
-" Color schemes
-Plugin 'rafi/awesome-vim-colorschemes'
 
 " Nerdtree
 Plugin 'scrooloose/nerdtree'
@@ -58,14 +55,8 @@ Plugin 'christoomey/vim-system-copy'
 " PHP superplugin
 Plugin 'shawncplus/phpcomplete.vim'
 
-" Auto pirs
-Plugin 'jiangmiao/auto-pairs'
-
 " Vim javascript
 Plugin 'pangloss/vim-javascript'
-
-" Emmet
-Plugin 'mattn/emmet-vim'
 
 " Autosave
 Plugin 'vim-scripts/vim-auto-save'
@@ -74,28 +65,13 @@ Plugin 'vim-scripts/vim-auto-save'
 " Vim will draw a nice statusline at the bottom of each window
 Plugin 'vim-airline/vim-airline'
 
-"colour-scheme
-Plugin 'ackyshake/Spacegray.vim'
+Plugin 'godlygeek/tabular'
 
 " Markdown
-Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 
-" Fugitive
-" Git stuff
+" Fugitive. Git stuff
 Plugin 'tpope/vim-fugitive'
-
-" VMustache
-Plugin 'tobyS/vmustache'
-
-" Ultisnips
-Plugin 'SirVer/ultisnips'
-
-" PDV
-Bundle 'tobyS/PDV'
-
-" Namespace resolver
-Bundle 'arnaud-lb/vim-php-namespace'
 
 " Ctrlp
 Plugin 'kien/ctrlp.vim'
@@ -103,23 +79,8 @@ Plugin 'kien/ctrlp.vim'
 " Commentary
 Plugin 'tpope/vim-commentary'
 
-" Easymotion
-Plugin 'Lokaltog/vim-easymotion'
-
-" Surround
-" Changin quotes or deleting them
-Plugin 'tpope/vim-surround'
-
-" Gundo
-Plugin 'sjl/gundo.vim'
-
-" PHP
-" syntax for PHP
+" PHP. Syntax for PHP
 Plugin 'StanAngeloff/php.vim'
-
-" Supertab
-" Supertab is a vim plugin which allows you to use <Tab> for all your insert
-Plugin 'ervandew/supertab'
 
 " PHP refactoring
 Bundle 'vim-php/vim-php-refactoring'
@@ -160,21 +121,6 @@ set laststatus=2	" Always show the status bar
 set showtabline=2
 set noshowmode	"Hide the default mode text
 
-"UltiSnips
-let g:UltiSnipsExpandTrigger="<Leader>sn"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-" PHP Documentor
-inoremap <leader>db <ESC>:call pdv#DocumentWithSnip()<CR>i 
-nnoremap <leader>db :call pdv#DocumentWithSnip()<CR> 
-vnoremap <leader>db :call pdv#DocumentWithSnip()<CR> 
-let g:pdv_template_dir = $HOME ."/.vim/DocBlocks/"
-
-" PHP QA
-let g:syntastic_phpcs_disable = 1
-let g:syntastic_phpmd_disable = 1
-
 " Quick fix window
 au FileType qf call MoveAndResize()
 function MoveAndResize()
@@ -190,7 +136,8 @@ nmap <Leader>ep :lp<CR>
 imap <Leader>ep <ESC>:lp<CR>i
 vmap <Leader>ep <ESC>:lp<CR>
 
-" Material theme
+" Material theme 'default' | 'palenight' | 'ocean' | 'lighter' | 'darker' | 'default-community' | 'palenight-community' | 'ocean-community' | 'lighter-community' | 'darker-community'
+" Doesn't work for some reason
 let g:material_theme_style = 'darker'
 
 "CtrlP
@@ -198,27 +145,6 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_custom_ignore = 'node_modules\|git\|vendor'
 set wildignore+=*.swp,*.zip,*.so,*/tmp/*
-
-" Gundo
-nnoremap <F5> :GundoToggle<CR>
-let g:gundo_close_on_revert = 1
-set hidden " stops undo history deleting after buffer change
-
-" Omincomplete
-highlight Pmenu ctermbg=238 gui=bold
-set completeopt-=preview
-inoremap <expr> <CR>       pumvisible() ? "\<C-y>" : "\<CR>"
-inoremap <expr> <Down>     pumvisible() ? "\<C-n>" : "\<Down>"
-inoremap <expr> <Up>       pumvisible() ? "\<C-p>" : "\<Up>"
-inoremap <expr> <PageDown> pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<PageDown>"
-inoremap <expr> <PageUp>   pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<PageUp>"
-
-"PHP complete_extended
-"autocmd  FileType php setlocal omnifunc=phpcomplete_extended#CompletePHP
-"let g:phpcomplete_index_composer_command="composer"
-
-" Supertab
-let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 
 " PHP refactoring
 let g:php_refactor_command='php ~/.vim/refactor/refactor.phar'
@@ -238,7 +164,7 @@ let g:auto_save_in_insert_mode = 0 " do not save while in insert mode
 " let g:auto_save_silent = 1  " do not display the auto-save notification
 
 " Standard Settings"
-" colorscheme spacegrayicolorscheme github
+" colorscheme material github
 colorscheme material
 set tabstop=4
 set shiftwidth=4
@@ -257,22 +183,11 @@ set smartcase
 set noerrorbells
 set autowrite
 
-" Disable all beeps
+" Disable all annoying beeps
 set noerrorbells visualbell t_vb=
 if has('autocmd')
     autocmd GUIEnter * set visualbell t_vb=
 endif
-
-" Namespace resolver
-let g:php_namespace_sort_after_insert = 1 " dependencies sorted every time you insert one
-
-" Automatically adds the corresponding use statement for the name under the cursor
-function! IPhpInsertUse()
-    call PhpInsertUse()
-    call feedkeys('a',  'n')
-endfunction
-autocmd FileType php inoremap <Leader>u <Esc>:call IPhpInsertUse()<CR>
-autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
 
 " Syntax highlighting
 au BufNewFile,BufRead *.blade.php set filetype=blade " Set blade extension syntax
@@ -284,6 +199,7 @@ map ,node :!clear && node %<CR>
 map ,js :!clear && node %<CR>
 map ,go :!clear && go run %<CR>
 map ,bash :!clear && ./%<CR>
+map ,gh :!clear && ghci %<CR>
 
 " Other
 nnoremap <CR> :nohlsearch<cr>
@@ -303,7 +219,7 @@ nnoremap ,try1 :-1read $HOME/.vim/snippets/.try1.php<CR>j$a
 nnoremap ,try2 :-1read $HOME/.vim/snippets/.try2.php<CR>j$a
 nnoremap ,setup :-1read $HOME/.vim/snippets/.setup.php<CR>8j$a
 nnoremap ,tear :-1read $HOME/.vim/snippets/.tear.php<CR>8j$a
-nnoremap ,test :-1read $HOME/.vim/snippets/.test.php<CR>5j$a
+nnoremap ,test :-1read $HOME/.vim/snippets/.test.php<CR>f(
 nnoremap ,dusktest :-1read $HOME/.vim/snippets/.dusktest.php<CR>7j$a
 nnoremap ,fun :-1read $HOME/.vim/snippets/.fun.php<CR>f(i
 nnoremap ,map :-1read $HOME/.vim/snippets/.map.php<CR>2jf)i
@@ -318,9 +234,9 @@ nnoremap ,walk2 :-1read $HOME/.vim/snippets/.walk2.php<CR>f,i
 nnoremap ,for :-1read $HOME/.vim/snippets/.for.php<CR>f;f;
 nnoremap ,for1 :-1read $HOME/.vim/snippets/.for1.php<CR>f;f;
 nnoremap ,for2 :-1read $HOME/.vim/snippets/.for2.php<CR>f;f;
-nnoremap ,foreach :-1read $HOME/.vim/snippets/.foreach.php<CR>fata
-nnoremap ,foreach1 :-1read $HOME/.vim/snippets/.foreach1.php<CR>fata
-nnoremap ,foreach2 :-1read $HOME/.vim/snippets/.foreach2.php<CR>fata
+nnoremap ,fore :-1read $HOME/.vim/snippets/.foreach.php<CR>fata
+nnoremap ,fore1 :-1read $HOME/.vim/snippets/.foreach1.php<CR>fata
+nnoremap ,fore2 :-1read $HOME/.vim/snippets/.foreach2.php<CR>fata
 nnoremap ,extends :-1read $HOME/.vim/snippets/.extends.php<CR>2jf)hi
 nnoremap ,iife :-1read $HOME/.vim/snippets/.iife.js<CR>j$
 nnoremap ,php :-1read $HOME/.vim/snippets/.php.php<CR>4ji
