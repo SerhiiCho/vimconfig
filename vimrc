@@ -35,7 +35,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'posva/vim-vue'
 
 " Material theme
-Plugin 'kaicataldo/material.vim'
+" Plugin 'kaicataldo/material.vim'
 
 " Nerdtree
 Plugin 'scrooloose/nerdtree'
@@ -49,9 +49,6 @@ Plugin 'shawncplus/phpcomplete.vim'
 " Vim javascript
 Plugin 'pangloss/vim-javascript'
 
-" Autosave
-Plugin 'vim-scripts/vim-auto-save'
-
 " Vim will draw a nice statusline at the bottom of each window
 Plugin 'vim-airline/vim-airline'
 
@@ -62,6 +59,9 @@ Plugin 'plasticboy/vim-markdown'
 
 " Fugitive. Git stuff
 Plugin 'tpope/vim-fugitive'
+
+" The Matrix theme
+Plugin 'luisiacc/thematrix'
 
 " Ctrlp
 Plugin 'kien/ctrlp.vim'
@@ -78,6 +78,9 @@ Plugin 'xsbeats/vim-blade'
 " All plugins must be defined before here
 call vundle#end()
 filetype plugin indent on
+
+" GitHub Copilot
+let g:copilot_enabled = v:false
 
 " NERDTree
 map <C-\> :NERDTreeToggle<CR>
@@ -117,7 +120,7 @@ vmap <Leader>ep <ESC>:lp<CR>
 
 " Material theme 'default' | 'palenight' | 'ocean' | 'lighter' | 'darker' | 'default-community' | 'palenight-community' | 'ocean-community' | 'lighter-community' | 'darker-community'
 " Doesn't work for some reason
-let g:material_theme_style = 'darker'
+" let g:material_theme_style = 'darker'
 
 "CtrlP
 let g:ctrlp_map = '<c-p>'
@@ -134,13 +137,9 @@ nmap <C-d> :bnext<CR>    " Faster buffer changes
 nmap <C-a> :bprev<CR>   " Faster buffer changes
 nmap <C-x> :bd<CR>  " Close the current buffer"
 
-" Autosave
-let g:auto_save = 1 " enable AutoSave on Vim startup
-let g:auto_save_in_insert_mode = 0 " do not save while in insert mode
-" let g:auto_save_silent = 1  " do not display the auto-save notification
-
 " Standard Settings"
-colorscheme material
+" colorscheme material
+colorscheme thematrix
 set tabstop=4
 set shiftwidth=4
 set smarttab
