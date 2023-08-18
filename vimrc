@@ -35,7 +35,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'posva/vim-vue'
 
 " Material theme
-" Plugin 'kaicataldo/material.vim'
+Plugin 'kaicataldo/material.vim'
 
 " Nerdtree
 Plugin 'scrooloose/nerdtree'
@@ -59,9 +59,6 @@ Plugin 'plasticboy/vim-markdown'
 
 " Fugitive. Git stuff
 Plugin 'tpope/vim-fugitive'
-
-" The Matrix theme
-Plugin 'luisiacc/thematrix'
 
 " Ctrlp
 Plugin 'kien/ctrlp.vim'
@@ -138,8 +135,7 @@ nmap <C-a> :bprev<CR>   " Faster buffer changes
 nmap <C-x> :bd<CR>  " Close the current buffer"
 
 " Standard Settings"
-" colorscheme material
-colorscheme thematrix
+colorscheme material
 set tabstop=4
 set shiftwidth=4
 set smarttab
