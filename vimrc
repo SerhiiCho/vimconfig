@@ -34,8 +34,11 @@ Plugin 'VundleVim/Vundle.vim'
 " Vue syntax
 Plugin 'posva/vim-vue'
 
-" Material theme
-Plugin 'kaicataldo/material.vim'
+" Afterglow theme
+Plugin 'danilo-augusto/vim-afterglow'
+
+" Github theme
+Plugin 'endel/vim-github-colorscheme'
 
 " Nerdtree
 Plugin 'scrooloose/nerdtree'
@@ -77,7 +80,14 @@ call vundle#end()
 filetype plugin indent on
 
 " GitHub Copilot
-let g:copilot_enabled = v:false
+let g:copilot_enabled = v:true
+
+" Afterglow theme
+if system('defaults read -g AppleInterfaceStyle') =~ "Dark"
+    colorscheme afterglow
+else
+    colorscheme github
+endif
 
 " NERDTree
 map <C-\> :NERDTreeToggle<CR>
@@ -115,10 +125,6 @@ nmap <Leader>ep :lp<CR>
 imap <Leader>ep <ESC>:lp<CR>i
 vmap <Leader>ep <ESC>:lp<CR>
 
-" Material theme 'default' | 'palenight' | 'ocean' | 'lighter' | 'darker' | 'default-community' | 'palenight-community' | 'ocean-community' | 'lighter-community' | 'darker-community'
-" Doesn't work for some reason
-" let g:material_theme_style = 'darker'
-
 "CtrlP
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_working_path_mode = 'ra'
@@ -135,7 +141,6 @@ nmap <C-a> :bprev<CR>   " Faster buffer changes
 nmap <C-x> :bd<CR>  " Close the current buffer"
 
 " Standard Settings"
-colorscheme material
 set tabstop=4
 set shiftwidth=4
 set smarttab
