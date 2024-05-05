@@ -28,7 +28,8 @@ set listchars+=trail:·
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" Plugins =========================
+"--------------------- Plugins ------------------------------------
+
 Plugin 'VundleVim/Vundle.vim'
 
 " Vue syntax
@@ -37,7 +38,7 @@ Plugin 'posva/vim-vue'
 " Afterglow theme
 Plugin 'danilo-augusto/vim-afterglow'
 
-" Github theme
+" Githud theme
 Plugin 'endel/vim-github-colorscheme'
 
 " Nerdtree
@@ -49,12 +50,20 @@ Plugin 'christoomey/vim-system-copy'
 " PHP superplugin
 Plugin 'shawncplus/phpcomplete.vim'
 
+" Emmet plugin for HTML
+Plugin 'mattn/emmet-vim'
+
+" PHP. Syntax for PHP
+Plugin 'StanAngeloff/php.vim'
+
 " Vim javascript
 Plugin 'pangloss/vim-javascript'
 
+" vim-airline
 " Vim will draw a nice statusline at the bottom of each window
 Plugin 'vim-airline/vim-airline'
 
+" Tabular
 Plugin 'godlygeek/tabular'
 
 " Markdown
@@ -69,46 +78,20 @@ Plugin 'kien/ctrlp.vim'
 " Commentary
 Plugin 'tpope/vim-commentary'
 
-" PHP. Syntax for PHP
-Plugin 'StanAngeloff/php.vim'
-
 " Blade syntax
 Plugin 'xsbeats/vim-blade'
 
-" All plugins must be defined before here
-call vundle#end()
-filetype plugin indent on
-
 " GitHub Copilot
-let g:copilot_enabled = v:true
+Plugin 'github/copilot.vim'
 
-" Afterglow theme
-if system('defaults read -g AppleInterfaceStyle') =~ "Dark"
-    colorscheme afterglow
-else
-    colorscheme github
-endif
+" Go plugin
+Plugin 'fatih/vim-go'
 
-" NERDTree
-map <C-\> :NERDTreeToggle<CR>
-let NERDTreeShowHidden=1 " Press I to toggle hidden files
-let NERDTreeQuitOnOpen=1
-let NERDTreeDirArrows=1
-let NERDTreeChDirMode=2
-let NERDTreeHighlightCursorline=1
-autocmd StdinReadPre * let s:std_in=1 " Open NerdTree on launch if no file selected
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif " Close vim if only NerdTree open
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif " Close vim if only NerdTree open
+"----------------------- Configurations ---------------------------
 
-" vim-airline
-set encoding=utf-8
-set guifont=Meslo\ LG\ M\ for\ Powerline "Install the font on host Putty 'powerline/fonts'
-let g:airline#extensions#tabline#enabled=1
-let g:airline_powerline_fonts = 1
-set term=xterm-256color
-set laststatus=2	" Always show the status bar
-set showtabline=2
-set noshowmode	"Hide the default mode text
+call vundle#end() "<------- All plugins must be defined before here
+
+filetype plugin indent on
 
 " Quick fix window
 au FileType qf call MoveAndResize()
@@ -124,12 +107,6 @@ vmap <Leader>en <ESC>:lne<CR>i
 nmap <Leader>ep :lp<CR>
 imap <Leader>ep <ESC>:lp<CR>i
 vmap <Leader>ep <ESC>:lp<CR>
-
-"CtrlP
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_custom_ignore = 'node_modules\|git\|vendor'
-set wildignore+=*.swp,*.zip,*.so,*/tmp/*
 
 " keymaps
 nmap <C-s> :w<CR>	" Make sure to add 'stty ixany' and 'stty ixoff -ixon' to .bashrc to disable freezing
@@ -164,9 +141,6 @@ if has('autocmd')
     autocmd GUIEnter * set visualbell t_vb=
 endif
 
-" Syntax highlighting
-au BufNewFile,BufRead *.blade.php set filetype=blade " Set blade extension syntax
-
 " Mapping
 map ,, :!clear && php %<CR>
 map ,py :!clear && python3 %<CR>
@@ -176,10 +150,60 @@ map ,go :!clear && go run %<CR>
 map ,bash :!clear && ./%<CR>
 map ,gh :!clear && ghci %<CR>
 
-" Other
-nnoremap <CR> :nohlsearch<cr>
+"--------------- Plugins Configurations  --------------------------
 
-"Snippets
+" Afterglow theme
+if system('defaults read -g AppleInterfaceStyle') =~ "Dark"
+    colorscheme afterglow
+else
+    colorscheme github
+endif
+
+" Nerdtree
+map <C-\> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1 " Press I to toggle hidden files
+let NERDTreeQuitOnOpen=1
+let NERDTreeDirArrows=1
+let NERDTreeChDirMode=2
+let NERDTreeHighlightCursorline=1
+autocmd StdinReadPre * let s:std_in=1 " Open NerdTree on launch if no file selected
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif " Close vim if only NerdTree open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif " Close vim if only NerdTree open
+
+" vim-airline
+set encoding=utf-8
+set guifont=Meslo\ LG\ M\ for\ Powerline "Install the font on host Putty 'powerline/fonts'
+let g:airline#extensions#tabline#enabled=1
+let g:airline_powerline_fonts = 1
+set term=xterm-256color
+set laststatus=2	" Always show the status bar
+set showtabline=2
+set noshowmode	"Hide the default mode text
+
+" Markdown
+let g:vim_markdown_folding_disabled = 1 " disable folding
+
+" Ctrlp
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_custom_ignore = 'node_modules\|git\|vendor'
+set wildignore+=*.swp,*.zip,*.so,*/tmp/*
+
+" Blade syntax
+au BufNewFile,BufRead *.blade.php set filetype=blade " Set blade extension syntax
+
+" GitHub Copilot
+
+" Enable or disable Copilot globally
+let g:copilot_enabled = v:true
+
+" Enable or disable Copilot for specific filetypes
+let g:copilot_filetypes = {
+      \ 'markdown': v:true,
+      \}
+
+"---------------------- Snippets ----------------------------------
+
 nnoremap ,html :-1read $HOME/.vim/snippets/.html.html<CR>3jwf>a
 nnoremap ,class :-1read $HOME/.vim/snippets/.class.php<CR>2jwi
 nnoremap ,pubf :-1read $HOME/.vim/snippets/.pubf.php<CR>f(i
@@ -215,4 +239,5 @@ nnoremap ,fore2 :-1read $HOME/.vim/snippets/.foreach2.php<CR>fata
 nnoremap ,extends :-1read $HOME/.vim/snippets/.extends.php<CR>2jf)hi
 nnoremap ,iife :-1read $HOME/.vim/snippets/.iife.js<CR>j$
 nnoremap ,php :-1read $HOME/.vim/snippets/.php.php<CR>4ji
-nnoremap ,temp :-1read $HOME/.vim/snippets/.temp.vue<CR>j$
+nnoremap ,scriptsetup :-1read $HOME/.vim/snippets/.scriptsetup.vue<CR>ji
+nnoremap <CR> :nohlsearch<cr>
