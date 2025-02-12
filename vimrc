@@ -32,6 +32,9 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
+" Autosave
+Plugin 'vim-scripts/vim-auto-save'
+
 " Vue syntax
 Plugin 'posva/vim-vue'
 
@@ -140,6 +143,10 @@ set noerrorbells visualbell t_vb=
 if has('autocmd')
     autocmd GUIEnter * set visualbell t_vb=
 endif
+
+" Autosave
+let g:auto_save = 1 " enable AutoSave on Vim startup
+let g:auto_save_in_insert_mode = 0 " do not save while in insert mode
 
 " Mapping
 map ,, :!clear && php %<CR>
