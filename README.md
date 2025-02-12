@@ -1,4 +1,6 @@
-<p align="center"><img src="https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.muylinux.com%2Fwp-content%2Fuploads%2F2011%2F12%2Fvim-logo.png&f=1"></p>
+# VIM Configurations
+
+<p align="center"><img src="logo.png" alt="VIM logo" width="200"></p>
 
 ## Use config
 
