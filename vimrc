@@ -44,9 +44,6 @@ Plugin 'danilo-augusto/vim-afterglow'
 " Githud theme
 Plugin 'endel/vim-github-colorscheme'
 
-" Nerdtree
-Plugin 'scrooloose/nerdtree'
-
 " Copy / paster
 Plugin 'christoomey/vim-system-copy'
 
