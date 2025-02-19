@@ -113,9 +113,9 @@ nmap <C-s> :w<CR>	" Make sure to add 'stty ixany' and 'stty ixoff -ixon' to .bas
 imap <C-s> <ESC>:w<CR>i
 nmap vs :vsplit<CR>
 nmap sp :split<CR>
-nmap <C-d> :bnext<CR>    " Faster buffer changes
-nmap <C-a> :bprev<CR>   " Faster buffer changes
-nmap <C-x> :bd<CR>  " Close the current buffer"
+
+" Minimal number of screen lines to keep above and below the cursor
+set scrolloff=5
 
 " Standard Settings"
 set tabstop=4
