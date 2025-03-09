@@ -59,10 +59,6 @@ Plugin 'StanAngeloff/php.vim'
 " Vim javascript
 Plugin 'pangloss/vim-javascript'
 
-" vim-airline
-" Vim will draw a nice statusline at the bottom of each window
-Plugin 'vim-airline/vim-airline'
-
 " Tabular
 Plugin 'godlygeek/tabular'
 
@@ -162,27 +158,6 @@ if system('defaults read -g AppleInterfaceStyle') =~ "Dark"
 else
     colorscheme github
 endif
-
-" Nerdtree
-map <C-\> :NERDTreeToggle<CR>
-let NERDTreeShowHidden=1 " Press I to toggle hidden files
-let NERDTreeQuitOnOpen=1
-let NERDTreeDirArrows=1
-let NERDTreeChDirMode=2
-let NERDTreeHighlightCursorline=1
-autocmd StdinReadPre * let s:std_in=1 " Open NerdTree on launch if no file selected
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif " Close vim if only NerdTree open
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif " Close vim if only NerdTree open
-
-" vim-airline
-set encoding=utf-8
-set guifont=Meslo\ LG\ M\ for\ Powerline "Install the font on host Putty 'powerline/fonts'
-let g:airline#extensions#tabline#enabled=1
-let g:airline_powerline_fonts = 1
-set term=xterm-256color
-set laststatus=2	" Always show the status bar
-set showtabline=2
-set noshowmode	"Hide the default mode text
 
 " Markdown
 let g:vim_markdown_folding_disabled = 1 " disable folding
